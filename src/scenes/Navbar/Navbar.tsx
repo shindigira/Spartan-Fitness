@@ -1,22 +1,42 @@
-import { useState } from "react";
-import { Bars3Icon, xMarkIcon } from "@heroicons/react/24/solid";
+import { useState, useRef } from "react";
+import { Bars3Icon, XMarkIcon, xMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "src/assets/Logo.png";
 
 import { flexBetween } from "src/utility/commonStyles";
 import { SelectedPage } from "src/utility/types";
 
 import Link from "./Link";
-import useMediaQuery from "src/hooks/useMediaQuery";
 import ActionButton from "./ActionButton";
+
+import useMediaQuery from "src/hooks/useMediaQuery";
+import useOnClickOutside from "src/hooks/UseOnClickOutside";
 
 type Props = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
+const LinkBar = ({ selectedPage, setSelectedPage }: Props) => {
+  return (
+    <>
+      {["Home", "Benefits", "Our Classes", "Contact Us"].map((pageName) => (
+        <Link
+          page={pageName}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
+      ))}
+    </>
+  );
+};
+
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+  const disableMenuToggle = (): void => setIsMenuToggled(false);
+  useOnClickOutside(modalRef, disableMenuToggle);
 
   return (
     <nav>
@@ -31,23 +51,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               <div className={`${flexBetween} w-full`}>
                 {/* RIGHT - INNER LEFT */}
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page={"Home"}
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page={"Benefits"}
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page={"Our Classes"}
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page={"Contact Us"}
+                  <LinkBar
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
@@ -69,6 +73,19 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               >
                 <Bars3Icon className="h-6 w-6 text-white" />
               </button>
+            )}
+            {/* MOBILE MENU MODAL */}
+            {!isAboveMediumScreens && isMenuToggled && (
+              <div
+                ref={modalRef}
+                className="fixed right-0 bottom-0 z-30 h-full w-[300px] bg-primary-100 drop-shadow-xl"
+              >
+                <div className="flex justify-end p-12">
+                  <button onClick={disableMenuToggle}>
+                    <XMarkIcon className="h-6 w-6 text-gray-400" />
+                  </button>
+                </div>
+              </div>
             )}
           </div>
         </div>
