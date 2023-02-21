@@ -1,16 +1,19 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SelectedPage } from "src/utility/types";
+import { useAppSelector, useAppDispatch } from "src/hooks/state";
+import { setSelectedPage } from "src/navbarSlice";
 
 type Props = {
   page: string;
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
+const Link = ({ page }: Props) => {
+  const dispatch = useAppDispatch();
+  const selectedPage = useAppSelector((state) => state.navbar.selectedPage);
   const formattedLink = page.toLowerCase().replace(/ /g, "") as SelectedPage;
-  const isSelectedPage = selectedPage === formattedLink;
-  const selectPage = () => setSelectedPage(formattedLink);
+  const isSelectedPage: boolean = selectedPage === formattedLink;
+  const selectPage = () => dispatch(setSelectedPage(formattedLink));
+
   return (
     <AnchorLink
       className={`${

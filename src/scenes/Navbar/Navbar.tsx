@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import { Bars3Icon, XMarkIcon, xMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "src/assets/Logo.png";
 
 import { flexBetween } from "src/utility/commonStyles";
-import { SelectedPage } from "src/utility/types";
 
 import Link from "./Link";
 import ActionButton from "./ActionButton";
@@ -11,26 +10,17 @@ import ActionButton from "./ActionButton";
 import useMediaQuery from "src/hooks/useMediaQuery";
 import useOnClickOutside from "src/hooks/UseOnClickOutside";
 
-type Props = {
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const LinkBar = ({ selectedPage, setSelectedPage }: Props) => {
+const LinkBar = () => {
   return (
     <>
       {["Home", "Benefits", "Our Classes", "Contact Us"].map((pageName) => (
-        <Link
-          page={pageName}
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+        <Link page={pageName} />
       ))}
     </>
   );
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
 
@@ -51,17 +41,12 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               <div className={`${flexBetween} w-full`}>
                 {/* RIGHT - INNER LEFT */}
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <LinkBar
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
+                  <LinkBar />
                 </div>
                 {/* RIGHT - INNER RIGHT */}
                 <div className={`${flexBetween} gap-8`}>
                   <p>Sign In</p>
-                  <ActionButton setSelectedPage={setSelectedPage}>
-                    Become a Member
-                  </ActionButton>
+                  <ActionButton>Become a Member</ActionButton>
                 </div>
               </div>
             )}
@@ -80,6 +65,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                 ref={modalRef}
                 className="fixed right-0 bottom-0 z-30 h-full w-[300px] bg-primary-100 drop-shadow-xl"
               >
+                {/* CLOSE BUTTON */}
                 <div className="flex justify-end p-12">
                   <button onClick={disableMenuToggle}>
                     <XMarkIcon className="h-6 w-6 text-gray-400" />

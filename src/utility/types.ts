@@ -4,3 +4,9 @@ export enum SelectedPage {
   OurClasses = "ourclasses",
   ContactUs = "contactus",
 }
+
+export type setSelectedPage = (value: SelectedPage) => void;
+
+export interface NavbarState {
+  selectedPage: SelectedPage;
+}
