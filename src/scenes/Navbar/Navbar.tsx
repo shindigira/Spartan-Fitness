@@ -1,4 +1,6 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
+import { useAppSelector, useAppDispatch } from "src/hooks/state";
+import { toggleMenu } from "src/navbarSlice";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo from "src/assets/Logo.png";
 
@@ -22,10 +24,12 @@ const LinkBar = () => {
 
 const Navbar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const isMenuToggled = useAppSelector((state) => state.navbar.isMenuToggled);
+  const toggleMenuToggle = () => dispatch(toggleMenu(!isMenuToggled));
+  const disableMenuToggle = () => dispatch(toggleMenu(false));
 
   const modalRef = useRef<HTMLDivElement>(null);
-  const disableMenuToggle = (): void => setIsMenuToggled(false);
   useOnClickOutside(modalRef, disableMenuToggle);
 
   return (
@@ -54,7 +58,7 @@ const Navbar = () => {
             {!isAboveMediumScreens && (
               <button
                 className={`rounded-full bg-secondary-500 p-2`}
-                onClick={() => setIsMenuToggled((prevToggle) => !prevToggle)}
+                onClick={toggleMenuToggle}
               >
                 <Bars3Icon className="h-6 w-6 text-white" />
               </button>

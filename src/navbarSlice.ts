@@ -4,6 +4,7 @@ import { NavbarState, SelectedPage } from "./utility/types";
 
 const initialState: NavbarState = {
   selectedPage: SelectedPage.Home,
+  isMenuToggled: false,
 };
 
 export const navbarSlice = createSlice({
@@ -13,10 +14,13 @@ export const navbarSlice = createSlice({
     setSelectedPage: (state, action: PayloadAction<SelectedPage>) => {
       state.selectedPage = action.payload;
     },
+    toggleMenu: (state, action: PayloadAction<boolean>) => {
+      state.isMenuToggled = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setSelectedPage } = navbarSlice.actions;
+export const { setSelectedPage, toggleMenu } = navbarSlice.actions;
 
 export default navbarSlice.reducer;
