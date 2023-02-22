@@ -6,21 +6,13 @@ import Logo from "src/assets/Logo.png";
 
 import { flexBetween } from "src/utility/commonStyles";
 
-import Link from "./Link";
+import LinkBar from "./LinkBar";
 import ActionButton from "./ActionButton";
 
 import useMediaQuery from "src/hooks/useMediaQuery";
 import useOnClickOutside from "src/hooks/UseOnClickOutside";
-
-const LinkBar = () => {
-  return (
-    <>
-      {["Home", "Benefits", "Our Classes", "Contact Us"].map((pageName) => (
-        <Link page={pageName} />
-      ))}
-    </>
-  );
-};
+import { setSelectedPage } from "src/navbarSlice";
+import { SelectedPage } from "src/utility/types";
 
 const Navbar = () => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -32,13 +24,17 @@ const Navbar = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(modalRef, disableMenuToggle);
 
+  const selectHome = () => dispatch(setSelectedPage("home" as SelectedPage));
+
   return (
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT */}
-            <img src={Logo} alt="logo" />
+            <button onClick={selectHome}>
+              <img src={Logo} alt="logo" />
+            </button>
             {/* RIGHT */}
             {/* Only above 1060px */}
             {isAboveMediumScreens && (
@@ -74,6 +70,11 @@ const Navbar = () => {
                   <button onClick={disableMenuToggle}>
                     <XMarkIcon className="h-6 w-6 text-gray-400" />
                   </button>
+                </div>
+
+                {/* DROPDOWN MENU */}
+                <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+                  <LinkBar />
                 </div>
               </div>
             )}
