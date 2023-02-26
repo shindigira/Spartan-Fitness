@@ -12,7 +12,6 @@ export const navbarSlice = createSlice({
   initialState,
   reducers: {
     setSelectedPage: (state, action: PayloadAction<SelectedPage>) => {
-      console.log(action);
       state.selectedPage = action.payload;
     },
     toggleMenu: (state, action: PayloadAction<boolean>) => {

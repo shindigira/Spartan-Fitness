@@ -5,9 +5,13 @@ export enum SelectedPage {
   ContactUs = "contactus",
 }
 
-export type setSelectedPage = (value: SelectedPage) => void;
+// export type setSelectedPage = (value: SelectedPage) => void;
 
 export interface NavbarState {
   selectedPage: SelectedPage;
   isMenuToggled: boolean;
+}
+
+export interface AppState {
+  isTopOfPage: boolean;
 }
