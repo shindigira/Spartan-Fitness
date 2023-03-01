@@ -16,4 +16,6 @@ const useMediaQuery = (query: string) => {
   return matches;
 };
 
+export const determineAboveMediumScreens = () =>
+  useMediaQuery("(min-width:1060px)");
 export default useMediaQuery;

@@ -7,9 +7,9 @@ import Logo from "src/assets/Logo.png";
 import { flexBetween, menuHidden, menuShow } from "src/utility/commonStyles";
 
 import LinkBar from "./LinkBar";
-import ActionButton from "./ActionButton";
+import ActionButton from "src/shared/ActionButton";
 
-import useMediaQuery from "src/hooks/useMediaQuery";
+import { determineAboveMediumScreens } from "src/hooks/useMediaQuery";
 import useOnClickOutside from "src/hooks/useOnClickOutside";
 
 import { setIsTopOfPage } from "src/appStateSlice";
@@ -17,7 +17,7 @@ import { setSelectedPage } from "src/navbarSlice";
 import { SelectedPage } from "src/utility/types";
 
 const Navbar = () => {
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const isAboveMediumScreens = determineAboveMediumScreens();
   const dispatch = useAppDispatch();
   const isMenuToggled = useAppSelector((state) => state.navbar.isMenuToggled);
   const toggleMenuToggle = () => dispatch(toggleMenu(!isMenuToggled));

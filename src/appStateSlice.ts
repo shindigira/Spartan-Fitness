@@ -3,7 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { AppState } from "./utility/types";
 
 const initialState: AppState = {
-  isTopOfPage: false,
+  isTopOfPage: true,
 };
 
 export const appStateSlice = createSlice({

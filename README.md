@@ -1,2 +1,3 @@
-# fitness-site-example
-A responsive fitness website (vite, typescript, react, tailwind, framer motion)
+# Fitness Site
+
+A responsive fitness website (Vite, TypeScript, React, TailwindCSS, Framer Motion)
