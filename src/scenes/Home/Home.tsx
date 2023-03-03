@@ -1,4 +1,4 @@
-import { useAppSelector, useAppDispatch } from "src/hooks/state";
+import { useAppDispatch } from "src/hooks/state";
 import { determineAboveMediumScreens } from "src/hooks/useMediaQuery";
 import { setSelectedPage } from "src/navbarSlice";
 import { SelectedPage } from "src/utility/types";
@@ -7,25 +7,28 @@ import { ActionButton } from "src/shared";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
-import HomePageText from "src/assets/HomePageText.png";
+// import HomePageText from "src/assets/HomePageText.png";
 import HomePageGraphic from "src/assets/HomePageGraphic.png";
 import SponsorForbes from "src/assets/SponsorForbes.png";
 import SponsorFortune from "src/assets/SponsorFortune.png";
 import SponsorRedBull from "src/assets/SponsorRedBull.png";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   const dispatch = useAppDispatch();
   const isAboveMediumScreens = determineAboveMediumScreens();
   // const selectPage = (page: SelectedPage) => dispatch(setSelectedPage(page));
   const navigateContactUs = () =>
     dispatch(setSelectedPage(SelectedPage.ContactUs));
 
+  const highlightNavbarTab = () => dispatch(setSelectedPage(SelectedPage.Home));
+
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       {/* IMAGE AND MAIN HEADER */}
-      <div className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6">
+      <motion.div
+        className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        onViewportEnter={highlightNavbarTab}
+      >
         {/* MAIN HEADER */}
         <div className="z-10 mt-16 md:mt-32 md:basis-3/5">
           {/* HEADINGS */}
@@ -34,13 +37,13 @@ const Home = (props: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{
-              once: true,
-              amount: 0.5,
+              once: true, // Animation occurs only once -- initiated by being in view
+              amount: 0.5, // See 50% before animation plays
             }}
             transition={{ duration: 0.5 }}
             variants={{
-              hidden: { opacity: 0, x: -50 },
-              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: -50 }, // initial, (default: px units)
+              visible: { opacity: 1, x: 0 }, // once visible
             }}
           >
             <div className="relative">
@@ -62,7 +65,20 @@ const Home = (props: Props) => {
           </motion.div>
 
           {/* ACTIONS */}
-          <div className="mt-8 flex items-center gap-8">
+          <motion.div
+            className="mt-8 flex items-center gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true, // Animation occurs only once -- initiated by being in view
+              amount: 0.5, // See 50% before animation plays
+            }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 }, // initial, (default: px units)
+              visible: { opacity: 1, x: 0 }, // once visible
+            }}
+          >
             <ActionButton>Join Now</ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
@@ -71,7 +87,7 @@ const Home = (props: Props) => {
             >
               <p>Learn More</p>
             </AnchorLink>
-          </div>
+          </motion.div>
         </div>
 
         {/* IMAGE */}
@@ -81,11 +97,11 @@ const Home = (props: Props) => {
         >
           <img className="" alt="home-pageGraphic" src={HomePageGraphic} />
         </div>
-      </div>
+      </motion.div>
 
       {/* SPONSORS */}
       {isAboveMediumScreens && (
-        <div className="h-[115px] bg-primary-100 py-10">
+        <div className="h-[135px] bg-primary-100 py-10">
           <div className="mx-auto w-5/6">
             <div className="flex w-3/5 items-center justify-between gap-8">
               <img alt="redbull-sponsor" src={SponsorRedBull} />

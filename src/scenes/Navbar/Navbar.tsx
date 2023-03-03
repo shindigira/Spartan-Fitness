@@ -33,16 +33,15 @@ const Navbar = () => {
   const selectPage = (page: SelectedPage) => dispatch(setSelectedPage(page));
   const selectHome = () => dispatch(setSelectedPage("home" as SelectedPage));
 
-  const handleScroll = () => {
-    if (window.scrollY === 0) {
-      setTopOfPage(true);
-      selectPage(SelectedPage.Home);
-    } else {
-      setTopOfPage(false);
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setTopOfPage(true);
+        selectPage(SelectedPage.Home);
+      } else {
+        setTopOfPage(false);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
