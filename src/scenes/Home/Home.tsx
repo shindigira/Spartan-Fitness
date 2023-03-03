@@ -5,6 +5,7 @@ import { SelectedPage } from "src/utility/types";
 
 import { ActionButton } from "src/shared";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { motion } from "framer-motion";
 
 import HomePageText from "src/assets/HomePageText.png";
 import HomePageGraphic from "src/assets/HomePageGraphic.png";
@@ -28,13 +29,17 @@ const Home = (props: Props) => {
         {/* MAIN HEADER */}
         <div className="z-10 mt-16 md:mt-32 md:basis-3/5">
           {/* HEADINGS */}
-          <div className="md:-mt-20">
+          <motion.div
+            className="md:-mt-20"
+            initial="hidden"
+            whileInView="visible"
+          >
             <div className="relative">
-              <div className="before:absolute before:-top-10 before:-left-10 before:z-[-1] before:opacity-30 before:content-spartantext">
-                <h1 className="whitespace-nowrap font-alegreya text-6xl font-extrabold">
+              <div className="before:absolute before:-top-10 before:-left-10 before:z-[-1] before:opacity-30 md:before:content-spartantext">
+                <h1 className="font-alegreya text-5xl font-extrabold sm:whitespace-nowrap sm:text-6xl">
                   SPARTAN FITNESS
                 </h1>
-                <h2 className="font-alegreya text-4xl font-thin">
+                <h2 className="font-alegreya text-3xl font-thin italic sm:text-4xl">
                   Evolutionary Fitness
                 </h2>
                 {/* <img alt="home-page-text" src={HomePageText} /> */}
@@ -45,7 +50,7 @@ const Home = (props: Props) => {
               Unrivaled gym. Unparalleled training fitness classes. Ideal
               environment to improve your aesthetics... Get your dream body now!
             </p>
-          </div>
+          </motion.div>
 
           {/* ACTIONS */}
           <div className="mt-8 flex items-center gap-8">
