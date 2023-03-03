@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export enum SelectedPage {
   Home = "home",
   Benefits = "benefits",
@@ -14,4 +16,10 @@ export interface NavbarState {
 
 export interface AppState {
   isTopOfPage: boolean;
+}
+
+export interface BenefitType {
+  icon: ReactNode;
+  title: string;
+  description: string;
 }
