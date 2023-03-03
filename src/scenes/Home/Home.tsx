@@ -30,8 +30,14 @@ const Home = (props: Props) => {
           {/* HEADINGS */}
           <div className="md:-mt-20">
             <div className="relative">
-              <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext">
-                <img alt="home-page-text" src={HomePageText} />
+              <div className="before:absolute before:-top-10 before:-left-10 before:z-[-1] before:opacity-30 before:content-spartantext">
+                <h1 className="whitespace-nowrap font-alegreya text-6xl font-extrabold">
+                  SPARTAN FITNESS
+                </h1>
+                <h2 className="font-alegreya text-4xl font-thin">
+                  Evolutionary Fitness
+                </h2>
+                {/* <img alt="home-page-text" src={HomePageText} /> */}
               </div>
             </div>
 

@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "src/hooks/state";
 import { toggleMenu } from "src/navbarSlice";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "src/assets/Logo.png";
+import Logo2 from "src/assets/Logo2.png";
 
 import { flexBetween, menuHidden, menuShow } from "src/utility/commonStyles";
 
@@ -50,13 +50,15 @@ const Navbar = () => {
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-6`}
+        className={`${navbarBackground} ${flexBetween} fixed top-0 z-30 w-full py-4`}
       >
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT */}
             <button onClick={selectHome}>
-              <img src={Logo} alt="logo" />
+              <div className="h-16 w-16">
+                <img className="object-cover" src={Logo2} alt="logo" />
+              </div>
             </button>
             {/* RIGHT */}
             {/* Only above 1060px */}
