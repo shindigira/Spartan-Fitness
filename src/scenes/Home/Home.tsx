@@ -3,8 +3,7 @@ import { determineAboveMediumScreens } from "src/hooks/useMediaQuery";
 import { setSelectedPage } from "src/navbarSlice";
 import { SelectedPage } from "src/utility/types";
 
-import { ActionButton } from "src/shared";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ActionButton, ActionLink } from "src/shared";
 import { motion } from "framer-motion";
 
 // import HomePageText from "src/assets/HomePageText.png";
@@ -16,9 +15,6 @@ import SponsorRedBull from "src/assets/SponsorRedBull.png";
 const Home = () => {
   const dispatch = useAppDispatch();
   const isAboveMediumScreens = determineAboveMediumScreens();
-  // const selectPage = (page: SelectedPage) => dispatch(setSelectedPage(page));
-  const navigateContactUs = () =>
-    dispatch(setSelectedPage(SelectedPage.ContactUs));
 
   const highlightNavbarTab = () => dispatch(setSelectedPage(SelectedPage.Home));
 
@@ -80,13 +76,9 @@ const Home = () => {
             }}
           >
             <ActionButton>Join Now</ActionButton>
-            <AnchorLink
-              className="text-sm font-bold text-primary-500 underline hover:text-secondary-500"
-              onClick={navigateContactUs}
-              href={`#${SelectedPage.ContactUs}`}
-            >
+            <ActionLink>
               <p>Learn More</p>
-            </AnchorLink>
+            </ActionLink>
           </motion.div>
         </div>
 

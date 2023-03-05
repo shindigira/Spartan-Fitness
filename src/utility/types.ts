@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export enum SelectedPage {
   Home = "home",
   Benefits = "benefits",
@@ -19,7 +17,7 @@ export interface AppState {
 }
 
 export interface BenefitType {
-  icon: ReactNode;
+  icon: JSX.Element;
   title: string;
   description: string;
 }

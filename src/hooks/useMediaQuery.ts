@@ -17,5 +17,6 @@ const useMediaQuery = (query: string) => {
 };
 
 export const determineAboveMediumScreens = () =>
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useMediaQuery("(min-width:1060px)");
 export default useMediaQuery;
