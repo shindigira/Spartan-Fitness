@@ -6,7 +6,7 @@ import {
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
 
-const benefits: BenefitType[] = [
+const BenefitsData: BenefitType[] = [
   {
     icon: <HomeModernIcon className="h-6 w-6" />,
     title: "State of the Art Facilities",
@@ -27,4 +27,4 @@ const benefits: BenefitType[] = [
   },
 ];
 
-export default benefits;
+export default BenefitsData;

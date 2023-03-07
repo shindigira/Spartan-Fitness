@@ -8,8 +8,16 @@ import { motion } from "framer-motion";
 
 import { HText } from "src/shared";
 
-import benefits from "./benefitsData";
+import BenefitsData from "./BenefitsData";
 import Benefit from "./Benefit";
+
+// Benefits List Framer Motion
+const benefitListContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2, duration: 0.5 }, // stagger each Benefit
+  },
+};
 
 function Benefits() {
   const dispatch = useAppDispatch();
@@ -40,8 +48,14 @@ function Benefits() {
         </motion.div>
 
         {/* BENEFITS */}
-        <div className={`md:${flexBetween} mt-5 gap-8`}>
-          {benefits.map((benefit: BenefitType) => (
+        <motion.div
+          className={`md:${flexBetween} mt-5 gap-8`}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={benefitListContainer}
+        >
+          {BenefitsData.map((benefit: BenefitType) => (
             <Benefit
               key={benefit.title}
               icon={benefit.icon}
@@ -49,7 +63,7 @@ function Benefits() {
               description={benefit.description}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
