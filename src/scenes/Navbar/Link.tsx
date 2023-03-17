@@ -18,7 +18,7 @@ const Link = ({ page }: Props) => {
     <AnchorLink
       className={`${
         isSelectedPage ? "text-primary-500" : ""
-      } duration-600 transition hover:text-primary-300`}
+      } duration-600 text-lg transition hover:text-primary-300`}
       href={`#${formattedLink}`}
       onClick={selectPage}
     >

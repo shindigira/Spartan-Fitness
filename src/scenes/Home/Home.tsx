@@ -85,7 +85,7 @@ const Home = () => {
         {/* IMAGE */}
         <div
           className="flex basis-3/5 justify-center md:z-10
-              md:ml-40 md:mt-16"
+              md:ml-5 md:mt-16"
         >
           <img className="" alt="home-pageGraphic" src={HomePageGraphic} />
         </div>
