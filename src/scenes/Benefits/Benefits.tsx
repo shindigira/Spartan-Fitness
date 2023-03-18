@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import { ActionButton, HText } from "src/shared";
 
-import BenefitsData from "./BenefitsData";
+import BenefitsData from "./BenefitsArrayData";
 import Benefit from "./Benefit";
 
 import BenefitsPageGraphic from "src/assets/BenefitsPageGraphic.png";
