@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { NavbarState, SelectedPage } from "./utility/types";
+import { NavbarState, SelectedPage } from "src/utility/types";
 
 const initialState: NavbarState = {
   selectedPage: SelectedPage.Home,

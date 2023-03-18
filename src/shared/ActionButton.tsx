@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useAppDispatch } from "src/hooks/state";
-import { setSelectedPage } from "src/navbarSlice";
+import { setSelectedPage } from "src/store/navbarSlice";
 import { SelectedPage } from "src/utility/types";
 
 type Props = {

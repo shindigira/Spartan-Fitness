@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import navbarReducer from "src/navbarSlice";
-import appStateReducer from "src/appStateSlice";
+import navbarReducer from "src/store/navbarSlice";
+import appStateReducer from "src/store/appStateSlice";
 
 export const store = configureStore({
   reducer: {

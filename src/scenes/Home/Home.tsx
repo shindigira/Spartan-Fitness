@@ -1,6 +1,6 @@
 import { useAppDispatch } from "src/hooks/state";
 import { determineAboveMediumScreens } from "src/hooks/useMediaQuery";
-import { setSelectedPage } from "src/navbarSlice";
+import { setSelectedPage } from "src/store/navbarSlice";
 import { SelectedPage } from "src/utility/types";
 
 import { ActionButton, ActionLink } from "src/shared";

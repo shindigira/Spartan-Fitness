@@ -1,5 +1,5 @@
 import { useAppDispatch } from "src/hooks/state";
-import { setSelectedPage } from "src/navbarSlice";
+import { setSelectedPage } from "src/store/navbarSlice";
 import { BenefitType, SelectedPage } from "src/utility/types";
 
 import { flexBetween } from "src/utility/commonStyles";
@@ -79,7 +79,7 @@ function Benefits() {
           </div>
 
           {/* DESCRIPTION */}
-          <div className="md:w-1/2">
+          <div className="md:basis-1/2">
             {/* DESCRIPTION TITLE */}
             <div className="relative">
               <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] before:content-abstractwaves">

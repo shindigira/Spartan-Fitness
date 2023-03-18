@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { AppState } from "./utility/types";
+import { AppState } from "src/utility/types";
 
 const initialState: AppState = {
   isTopOfPage: true,

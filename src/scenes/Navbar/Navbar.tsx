@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "src/hooks/state";
-import { toggleMenu } from "src/navbarSlice";
+import { toggleMenu } from "src/store/navbarSlice";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo2 from "src/assets/Logo2.png";
 
@@ -12,8 +12,8 @@ import ActionButton from "src/shared/ActionButton";
 import { determineAboveMediumScreens } from "src/hooks/useMediaQuery";
 import useOnClickOutside from "src/hooks/useOnClickOutside";
 
-import { setIsTopOfPage } from "src/appStateSlice";
-import { setSelectedPage } from "src/navbarSlice";
+import { setIsTopOfPage } from "src/store/appStateSlice";
+import { setSelectedPage } from "src/store/navbarSlice";
 import { SelectedPage } from "src/utility/types";
 
 const Navbar = () => {
