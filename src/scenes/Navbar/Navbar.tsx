@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "src/hooks/state";
+import { debounce } from "lodash";
 import { toggleMenu } from "src/store/navbarSlice";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo2 from "src/assets/Logo2.png";
@@ -20,7 +21,8 @@ const Navbar = () => {
   const isAboveMediumScreens = determineAboveMediumScreens();
   const dispatch = useAppDispatch();
   const isMenuToggled = useAppSelector((state) => state.navbar.isMenuToggled);
-  const toggleMenuToggle = () => dispatch(toggleMenu(!isMenuToggled));
+  const toggleMenuTop = () => dispatch(toggleMenu(!isMenuToggled));
+  const debouncedToggle = debounce(toggleMenuTop, 200);
   const disableMenuToggle = () => dispatch(toggleMenu(false));
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -79,7 +81,7 @@ const Navbar = () => {
             {!isAboveMediumScreens && (
               <button
                 className={`rounded-full bg-secondary-500 p-2`}
-                onClick={toggleMenuToggle}
+                onClick={debouncedToggle}
               >
                 <Bars3Icon className="h-6 w-6 text-white" />
               </button>
