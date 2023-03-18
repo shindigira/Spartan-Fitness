@@ -23,10 +23,9 @@ const Navbar = () => {
   const toggleMenuTop = () => dispatch(toggleMenu(!isMenuToggled));
   const disableMenuToggle = () => dispatch(toggleMenu(false));
 
+  const buttonToggleRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(modalRef, () => {
-    if (isMenuToggled) disableMenuToggle();
-  });
+  useOnClickOutside([modalRef, buttonToggleRef], disableMenuToggle);
 
   const isTopOfPage = useAppSelector((state) => state.appState.isTopOfPage);
   // Navbar Background Color Changes based on Scroll
@@ -79,12 +78,14 @@ const Navbar = () => {
             )}
             {/* Three Bars Menu */}
             {!isAboveMediumScreens && (
-              <button
-                className={`rounded-full bg-secondary-500 p-2`}
-                onClick={toggleMenuTop}
-              >
-                <Bars3Icon className="h-6 w-6 text-white" />
-              </button>
+              <div ref={buttonToggleRef}>
+                <button
+                  className={`rounded-full bg-secondary-500 p-2`}
+                  onClick={toggleMenuTop}
+                >
+                  <Bars3Icon className="h-6 w-6 text-white" />
+                </button>
+              </div>
             )}
           </div>
         </div>
