@@ -4,7 +4,7 @@ import { toggleMenu } from "src/store/navbarSlice";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Logo2 from "src/assets/Logo2.png";
 
-import { flexBetween, menuHidden, menuShow } from "src/utility/commonStyles";
+import { flexBetween, menuAnimation } from "src/utility/commonStyles";
 
 import LinkBar from "./LinkBar";
 import ActionButton from "src/shared/ActionButton";
@@ -95,8 +95,8 @@ const Navbar = () => {
       {!isAboveMediumScreens && (
         <div
           ref={modalRef}
-          className={`fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl ${menuHidden} ${
-            isMenuToggled ? menuShow : ""
+          className={`fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl ${menuAnimation} ${
+            isMenuToggled ? "translate-x-0" : "translate-x-[100%]"
           }`}
         >
           {/* CLOSE BUTTON */}
