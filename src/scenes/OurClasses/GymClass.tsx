@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import { GymClassType } from "src/utility/types";
 
 // const overlayStyles = `p-5 absolute z-30 flex
@@ -6,7 +6,7 @@ import { GymClassType } from "src/utility/types";
 //   whitespace-normal bg-primary-500 text-center text-white
 //   opacity-0 transition duration-500 hover:opacity-90`;
 
-const Class: FC<GymClassType> = ({ name, description, image }) => {
+const GymClass = ({ name, description, image }: GymClassType) => {
   const [hovering, setHovering] = useState<boolean>(false);
   return (
     <li
@@ -34,4 +34,4 @@ const Class: FC<GymClassType> = ({ name, description, image }) => {
   );
 };
 
-export default Class;
+export default GymClass;

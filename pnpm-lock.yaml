@@ -26,6 +26,7 @@ specifiers:
   react: ^18.2.0
   react-anchor-link-smooth-scroll: ^1.0.12
   react-dom: ^18.2.0
+  react-hook-form: ^7.43.7
   react-redux: ^8.0.5
   tailwindcss: ^3.2.4
   typescript: ^4.9.3
@@ -38,6 +39,7 @@ dependencies:
   react: 18.2.0
   react-anchor-link-smooth-scroll: 1.0.12
   react-dom: 18.2.0_react@18.2.0
+  react-hook-form: 7.43.7_react@18.2.0
   react-redux: 8.0.5_fxtgt6bjwd6p4cwoordejim2zi
 
 devDependencies:
@@ -2563,6 +2565,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form/7.43.7_react@18.2.0:
+    resolution: {integrity: sha512-38yehQkQQ5uufaPKFScs7jhLE8n3+LG9H/BZfFAiBL2+7piDmw/BrdNJV4irzMaPnWZGhmGLHVICHXNVGIuXZg==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

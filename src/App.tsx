@@ -3,6 +3,7 @@ import Home from "src/scenes/Home";
 import Benefits from "src/scenes/Benefits";
 import OurClasses from "src/scenes/OurClasses";
 import ContactUs from "src/scenes/ContactUs";
+import Footer from "src/scenes/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Benefits />
       <OurClasses />
       <ContactUs />
+      <Footer />
     </div>
   );
 }
