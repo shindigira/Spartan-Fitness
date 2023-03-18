@@ -10,22 +10,41 @@ const Footer = () => {
           </div>
 
           <p className="my-5">
-            Lorem vitae ut augue auctor faucibus eget eget ut libero. Elementum
-            purus et arcu massa dictum condimentum. Augue scelerisque iaculis
-            orci ut habitant laoreet. Iaculis tristique.
+            © Spartan Fitness 2023, LLC. Spartan Fitness, Fittest on Earth,
+            3...2...1...Go! Game and Sport of Fitness are trademarks of Spartan
+            Fitness, LLC in the U.S. and/or other countries. All Rights
+            Reserved.
           </p>
-          <p>© Spartan Fitness All Rights Reserved.</p>
         </div>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        <div className="mt-8 basis-1/4 md:mt-0">
           <h4 className="font-bold">Links</h4>
-          <p className="my-5">Massa orci senectus</p>
-          <p className="my-5">Et gravida id et etiam</p>
-          <p>Ullamcorper vivamus</p>
+          <a href="#" className="block">
+            Terms & Conditions
+          </a>
+          <a href="#" className="block">
+            Privacy Policy
+          </a>
+          <a href="#" className="block">
+            Disclaimer
+          </a>
+          <a href="#" className="block">
+            Do Not Sell My Info
+          </a>
+          <a href="#" className="block">
+            Cookie Policy
+          </a>
+          <a href="#" className="block">
+            Report IP Thef
+          </a>
         </div>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        <div className="mt-8 basis-1/4 md:mt-0">
           <h4 className="font-bold">Contact Us</h4>
-          <p className="my-5">Tempus metus mattis risus volutpat egestas.</p>
-          <p>(896)-467-8953</p>
+          <a className="block" href="mailto:contactus@spartanfitness.com">
+            contactus@spartanfitness.com
+          </a>
+          <a className="block" href="tel:3964678953">
+            (896)-467-8953
+          </a>
         </div>
       </div>
     </footer>

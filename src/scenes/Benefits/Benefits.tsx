@@ -111,18 +111,19 @@ function Benefits() {
               }}
             >
               <p className="my-5">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
-                quam ex quos in dolorem soluta dolorum, iusto a? Iure,
-                accusantium rerum neque vero voluptatem tempore cumque quod ut
-                labore molestias voluptatibus voluptates eius aliquam unde
-                aliquid ratione fugiat alias incidunt esse sit doloremque error
-                corporis. Provident sint quo iste illo!
+                Every kind of lover of fitness will find something they like in
+                the Spartan Fitness Gym. You can go there if you want to lose
+                weight, tone or bulk up, or if you want to get in shape.
+                Transform your body and feel the burn with isolated movements,
+                targeting muscles in your arms, legs, hips and thighs. Each
+                workout is crafted carefully with each fitness level in mind.
               </p>
               <p className="mb-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi, dignissimos. Enim beatae vel perferendis tempore eos!
-                Corrupti, numquam molestiae hic quisquam, dicta consectetur et
-                ducimus aliquam eligendi officia dolores a?
+                At those big chain gyms, a member is just another body on a
+                machine or in a class. At Spartan Fitness Gym, our members are
+                people who live in our community - neighbors who are looking for
+                a fitness club where everyone feels comfortable and welcomed and
+                people know their name. If you're not…
               </p>
             </motion.div>
             {/* BUTTON */}

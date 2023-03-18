@@ -54,9 +54,10 @@ const ContactUs = () => {
             <span className="text-primary-500">JOIN NOW</span> TO GET IN SHAPE
           </HText>
           <p className="my-5">
-            Congue adipiscing risus commodo placerat. Tellus et in feugiat nisl
-            sapien vel rhoncus. Placerat at in enim pellentesque. Nulla
-            adipiscing leo egestas nisi elit risus sit. Nunc cursus sagittis.
+            With the SF Black Card® membership, you can use any of our 2,300+
+            locations, bring a guest for free as much as you want, and relax in
+            the exclusive Black Card Spa! Check out everything the SF Black
+            Card® has to offer.
           </p>
         </motion.div>
         {/* FORM AND IMAGE */}

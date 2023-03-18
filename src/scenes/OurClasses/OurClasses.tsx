@@ -28,11 +28,11 @@ const OurClasses = () => {
           <div className="md:w-3/5">
             <HText>Our Classes</HText>
             <p className="py-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas
-              illo quae quaerat, neque qui nam sint beatae eius commodi dolor
-              sunt, modi suscipit esse repellat at, odio voluptates aut in. Quae
-              possimus soluta est et voluptate molestias, quas sit obcaecati
-              quod, autem totam? Officia.
+              We know your gym needs to be there for you in all these ways and
+              more. With amenities like on-site spa services, post-workout
+              protein shakes and personal training pros to take you to your peak
+              of performance. Yes, we want to impress, and keep you coming back
+              for more.
             </p>
           </div>
         </motion.div>
