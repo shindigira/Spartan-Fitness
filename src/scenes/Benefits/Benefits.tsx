@@ -23,12 +23,11 @@ const benefitListContainer = {
 
 function Benefits() {
   const dispatch = useAppDispatch();
-  const highlightNavbarTab = () =>
-    dispatch(setSelectedPage(SelectedPage.Benefits));
+  const highlightTab = () => dispatch(setSelectedPage(SelectedPage.Benefits));
 
   return (
     <section id="benefits" className="mx-auto mb-10 min-h-full w-5/6 py-10">
-      <motion.div onViewportEnter={highlightNavbarTab}>
+      <motion.div onViewportEnter={highlightTab}>
         {/* HEADER */}
         <motion.div
           className="md:my-5 md:w-3/5"
@@ -68,7 +67,7 @@ function Benefits() {
         </motion.div>
 
         {/* GRAPHIC AND DESCRIPTION */}
-        <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
+        <div className="mt-16 gap-20 md:mt-28 md:flex md:items-center md:justify-between">
           {/* GRAPHIC */}
           <div className="graphic-container mb-32">
             <img

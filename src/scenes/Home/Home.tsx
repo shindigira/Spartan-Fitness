@@ -16,14 +16,14 @@ const Home = () => {
   const dispatch = useAppDispatch();
   const isAboveMediumScreens = determineAboveMediumScreens();
 
-  const highlightNavbarTab = () => dispatch(setSelectedPage(SelectedPage.Home));
+  const highlightTab = () => dispatch(setSelectedPage(SelectedPage.Home));
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       {/* IMAGE AND MAIN HEADER */}
       <motion.div
         className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
-        onViewportEnter={highlightNavbarTab}
+        onViewportEnter={highlightTab}
       >
         {/* MAIN HEADER */}
         <div className="z-10 mt-16 md:mt-32 md:basis-3/5">

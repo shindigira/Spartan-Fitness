@@ -10,11 +10,10 @@ import GymClass from "./GymClass";
 
 const OurClasses = () => {
   const dispatch = useAppDispatch();
-  const highlightNavbarTab = () =>
-    dispatch(setSelectedPage(SelectedPage.OurClasses));
+  const highlightTab = () => dispatch(setSelectedPage(SelectedPage.OurClasses));
   return (
-    <section id="ourclasses" className="w-full bg-primary-100 py-20">
-      <motion.div onViewportEnter={highlightNavbarTab}>
+    <section id="ourclasses" className="h-full w-full bg-primary-100 py-20">
+      <motion.div onViewportEnter={highlightTab}>
         <motion.div
           className="mx-auto w-5/6"
           initial="hidden"
