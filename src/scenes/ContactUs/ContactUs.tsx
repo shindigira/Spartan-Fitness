@@ -21,14 +21,12 @@ const ContactUs = () => {
     formState: { errors },
   } = useForm();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const formSubmit = async (e: any) => {
     const isValid = await trigger();
-    console.log(isValid);
     if (!isValid) {
       e.preventDefault();
     }
-    console.dir(e.target);
-    console.log(import.meta.env.VITE_FORM_SUBMIT_EMAIL_CODE);
   };
 
   const inputStyles = `mb-1 w-full rounded-lg bg-primary-300
