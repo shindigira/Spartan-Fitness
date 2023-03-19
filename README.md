@@ -8,7 +8,7 @@
   </h3>
  <br />
  
- ### Click here for live demo   <a href="https://002213b4.spartan-fitness.pages.dev/">Spartan Fitness</a>
+ ### Click here for live demo   <a href="https://14377928.spartan-fitness.pages.dev/">Spartan Fitness</a>
 
 </p>
 
